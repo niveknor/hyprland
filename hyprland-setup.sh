@@ -45,6 +45,11 @@ PAKKER_FONTER=(
     noto-fonts-emoji
 )
 
+PAKKER_SOFTWARE=(
+    firefox
+    
+)
+
 # ---------- Installasjon ----------
 info "Oppdaterer systemet..."
 sudo pacman -Syu --noconfirm
@@ -55,6 +60,7 @@ sudo pacman -S --needed --noconfirm \
     "${PAKKER_VERKTOY[@]}" \
     "${PAKKER_LYD[@]}" \
     "${PAKKER_FONTER[@]}"
+    "${PAKKER_SOFTWARE[@]}"
 
 # ---------- Konfigurasjon ----------
 CONF_DIR="$HOME/.config/hypr"
@@ -91,6 +97,9 @@ bind = $mod, Return, exec, $terminal
 bind = $mod, D, exec, $menu
 bind = $mod, Q, killactive
 bind = $mod SHIFT, E, exit
+
+# Shortcuts
+bind = mod, B firefox
 
 # Bytt arbeidsområde 1-5
 bind = $mod, 1, workspace, 1
