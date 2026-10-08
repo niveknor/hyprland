@@ -22,6 +22,7 @@ PAKKER_KJERNE=(
     polkit-kde-agent
     qt5-wayland
     qt6-wayland
+    sddm
 )
 
 PAKKER_VERKTOY=(
@@ -67,6 +68,8 @@ CONF_DIR="$HOME/.config/hypr"
 CONF_FIL="$CONF_DIR/hyprland.conf"
 
 mkdir -p "$CONF_DIR"
+
+systemctl enable sddm
 
 # Ta backup hvis det allerede finnes en config
 if [[ -f "$CONF_FIL" ]]; then
